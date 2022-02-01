@@ -2,6 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:reorient/pages/login.dart';
+import 'package:reorient/themes/Gradients.dart';
+import 'package:reorient/themes/colors.dart';
+import 'package:reorient/themes/fonts.dart';
 import 'package:reorient/widgets/GradientButton.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,32 +31,22 @@ class _HomePageState extends State<HomePage> {
                 height: 137,
                 image: AssetImage("assets/runner.png"),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 8.0),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 8.0),
                 child: SizedBox(
                   width: 220,
                   child: Text(
                     "Chosen just for you.",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontFamily: GoogleFonts.roboto().fontFamily,
-                      fontWeight: FontWeight.bold,
-                      color: const Color(0xFF000000),
-                    ),
+                    style: ReorientTextStyles.headerText,
                     textAlign: TextAlign.center,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 220,
                 child: Text(
                   "Discover new hobbies. Properly",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: GoogleFonts.roboto().fontFamily,
-                    fontWeight: FontWeight.normal,
-                    color: const Color(0x63000000),
-                  ),
+                  style: ReorientTextStyles.subHeaderText,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -62,22 +56,15 @@ class _HomePageState extends State<HomePage> {
                   child: const Text(
                     "Login",
                     style: TextStyle(
-                      color: Color(0xFFFFFFFF),
+                      color: ReorientColors.white,
                     ),
                   ),
                   width: 200,
-                  gradient: const LinearGradient(
-                    colors: <Color>[
-                      Color(0xFF5B0060),
-                      Color(0xFF870160),
-                      Color(0xFFAC255E),
-                      Color(0xFFCA485C),
-                      Color(0xFFE16B5C),
-                      Color(0xFFF39060),
-                      Color(0xFFFFB56B),
-                    ],
-                  ),
-                  onPressed: () => {},
+                  gradient: ReorientGradients.mainGradient,
+                  onPressed: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Login()))
+                  },
                 ),
               )
             ],
