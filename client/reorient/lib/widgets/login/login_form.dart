@@ -1,7 +1,10 @@
 import 'dart:developer';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:reorient/auth/fire_auth.dart';
 import 'package:reorient/helpers/email_validate.dart';
+import 'package:reorient/pages/main_page.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/gradients.dart';
 import 'package:reorient/widgets/gradient_widgets/gradient_border.dart';
@@ -20,6 +23,8 @@ class LoginForm extends StatefulWidget {
 
 class LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailTextController = TextEditingController();
+  final TextEditingController _passwordTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +43,7 @@ class LoginFormState extends State<LoginForm> {
                   const SizedBox(height: 45.0),
                   GradientBorder(
                     child: ReorientTextField(
+                      controller: _emailTextController,
                       label: "Email",
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -52,6 +58,7 @@ class LoginFormState extends State<LoginForm> {
                   const SizedBox(height: 25.0),
                   GradientBorder(
                     child: ReorientTextField(
+                      controller: _passwordTextController,
                       label: "Password",
                       obscureText: true,
                       validator: (value) {
@@ -72,15 +79,26 @@ class LoginFormState extends State<LoginForm> {
               padding: const EdgeInsets.all(12.0),
               child: GradientIconButton(
                 gradient: ReorientGradients.mainGradient,
-                onPressed: () => {
-                  if (_formKey.currentState!.validate())
-                    {
-                      // If the form is valid, display a snackbar. In the real world,
-                      // you'd often call a server or save the information in a database.
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Processing Data')),
-                      )
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    User? user = await FireAuth.signInUsingEmailPassword(
+                      email: _emailTextController.text,
+                      password: _passwordTextController.text,
+                      context: context,
+                    );
+                    if (user != null) {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                            builder: (context) => MainPage(user: user)),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text('Incorrect email or password'),
+                        duration: Duration(seconds: 3),
+                        backgroundColor: ReorientColors.red,
+                      ));
                     }
+                  }
                 },
                 icon: const Icon(
                   Icons.arrow_forward_rounded,

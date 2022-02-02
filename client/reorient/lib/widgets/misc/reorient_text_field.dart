@@ -6,6 +6,7 @@ class ReorientTextField extends StatelessWidget {
   final String label;
   final String? Function(String?)? validator;
   final bool obscureText;
+  final TextEditingController? controller;
 
   const ReorientTextField({
     Key? key,
@@ -13,11 +14,13 @@ class ReorientTextField extends StatelessWidget {
     this.label = "",
     required this.validator,
     this.obscureText = false,
+    required this.controller,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       obscureText: obscureText,
       style: const TextStyle(fontFamily: 'Roboto', fontSize: 20.0),
       validator: validator,
