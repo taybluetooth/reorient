@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reorient/pages/homepage.dart';
+import 'package:reorient/pages/onboard_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Reorient',
-      home: HomePage(),
+      home: OnboardPage(),
     );
   }
 }

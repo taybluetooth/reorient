@@ -1,20 +1,20 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+/*import 'package:flutter/material.dart';
+import 'package:reorient/pages/main_page.dart';
 import 'package:reorient/themes/Gradients.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
-import 'package:reorient/widgets/GradientBorder.dart';
-import 'package:reorient/widgets/GradientIconButton.dart';
-import 'package:reorient/widgets/ReorientTextField.dart';
+import 'package:reorient/widgets/gradient_border.dart';
+import 'package:reorient/widgets/gradient_icon_button.dart';
+import 'package:reorient/widgets/reorient_text_field.dart';
 
-class Login extends StatefulWidget {
-  Login({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +74,14 @@ class _LoginState extends State<Login> {
                 padding: const EdgeInsets.all(12.0),
                 child: GradientIconButton(
                   gradient: ReorientGradients.mainGradient,
-                  onPressed: () => {},
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MainPage(),
+                      ),
+                    ),
+                  },
                   icon: const Icon(
                     Icons.arrow_forward_rounded,
                     color: ReorientColors.white,
@@ -88,3 +95,4 @@ class _LoginState extends State<Login> {
     );
   }
 }
+*/

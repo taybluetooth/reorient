@@ -1,21 +1,18 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:reorient/pages/login.dart';
+import 'package:reorient/pages/login_page.dart';
 import 'package:reorient/themes/Gradients.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
-import 'package:reorient/widgets/GradientButton.dart';
+import 'package:reorient/widgets/gradient_widgets/gradient_button.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+class OnboardPage extends StatefulWidget {
+  const OnboardPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<OnboardPage> createState() => _OnboardPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _OnboardPageState extends State<OnboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,8 +59,12 @@ class _HomePageState extends State<HomePage> {
                   width: 200,
                   gradient: ReorientGradients.mainGradient,
                   onPressed: () => {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Login()))
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ),
+                    )
                   },
                 ),
               )

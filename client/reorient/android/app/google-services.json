@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "497101697061",
+    "project_id": "reorient-8e8ce",
+    "storage_bucket": "reorient-8e8ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497101697061:android:0db00a0f89cabe5e7bcfcc",
+        "android_client_info": {
+          "package_name": "com.example.reorient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497101697061-5jp2kh10c79ags3ipo75a13ktvs8o7fk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRlMMRmqYoZdkmkp6S9Z9YfpSV90-O9cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497101697061-5jp2kh10c79ags3ipo75a13ktvs8o7fk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

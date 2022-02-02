@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reorient/themes/gradients.dart';
-import 'package:reorient/widgets/ReorientTextField.dart';
+import 'package:reorient/widgets/misc/reorient_text_field.dart';
 
 class GradientBorder extends StatelessWidget {
   final Widget? child;
