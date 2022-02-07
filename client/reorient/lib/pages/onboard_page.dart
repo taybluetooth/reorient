@@ -52,9 +52,7 @@ class _OnboardPageState extends State<OnboardPage> {
                 child: GradientButton(
                   child: const Text(
                     "Login",
-                    style: TextStyle(
-                      color: ReorientColors.white,
-                    ),
+                    style: ReorientTextStyles.buttonText,
                   ),
                   width: 200,
                   gradient: ReorientGradients.mainGradient,

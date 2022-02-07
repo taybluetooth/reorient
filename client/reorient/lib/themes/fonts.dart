@@ -14,4 +14,10 @@ abstract class ReorientTextStyles {
     fontWeight: FontWeight.normal,
     color: ReorientColors.darkGrey,
   );
+  static const TextStyle buttonText = TextStyle(
+    fontSize: 14,
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.bold,
+    color: ReorientColors.white,
+  );
 }
