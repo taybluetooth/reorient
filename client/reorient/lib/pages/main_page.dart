@@ -72,7 +72,7 @@ class _MainPageState extends State<MainPage> {
               child: SvgPicture.asset("assets/robot.svg"),
             ),
             const SizedBox(
-              height: 40,
+              height: 80,
             ),
             Center(
               child: GradientButton(
@@ -82,7 +82,7 @@ class _MainPageState extends State<MainPage> {
                 ),
                 gradient: ReorientGradients.mainGradient,
                 onPressed: () {},
-                width: 100.0,
+                width: 120.0,
               ),
             ),
           ],
