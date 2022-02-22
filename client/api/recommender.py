@@ -38,7 +38,7 @@ print(get_similar_item("Football", 2))
 ball_games_lover = [("Football",5), ("Rugby", 2), ("Walking", 1)]
 similar_activities = pd.DataFrame()
 for activity, rating in ball_games_lover:
-    similar_activities = similar_activities.append(get_similar_item(activity, rating),ignore_index=True)
+    similar_activities = pd.concat([similar_activities,get_similar_item(activity, rating)])
     
 similar_activities.head()
-similar_activities.sum().sort_values(ascending=False)
+similar_activities.sum().sort_values(ascending=False).to_json()

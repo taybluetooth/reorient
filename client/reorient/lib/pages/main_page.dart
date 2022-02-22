@@ -2,6 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:reorient/controllers/activity_controller.dart';
+import 'package:reorient/models/Activity.dart';
+import 'package:reorient/pages/activity_choice_page.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
 import 'package:reorient/themes/gradients.dart';
@@ -19,6 +22,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   late User _currentUser;
+  late List<Activity> activities;
 
   @override
   void initState() {
@@ -80,7 +84,14 @@ class _MainPageState extends State<MainPage> {
                   style: ReorientTextStyles.buttonText,
                 ),
                 gradient: ReorientGradients.mainGradient,
-                onPressed: () {},
+                onPressed: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ActivityChoicePage(),
+                    ),
+                  )
+                },
                 width: 120.0,
               ),
             ),
