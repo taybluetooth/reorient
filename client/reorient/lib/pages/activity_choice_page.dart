@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:reorient/controllers/activity_controller.dart';
 import 'package:reorient/models/Activity.dart';
+import 'package:reorient/themes/colors.dart';
+import 'package:reorient/themes/fonts.dart';
 import 'package:reorient/widgets/appbar/reorient_appbar.dart';
 
 class ActivityChoicePage extends StatefulWidget {
@@ -13,32 +15,34 @@ class ActivityChoicePage extends StatefulWidget {
 class _ActivityChoicePageState extends State<ActivityChoicePage> {
   List<Activity> activities = [];
 
-  _ActivityChoicePageState() {
-    fetchRecommendation(activity: "IceHockey", rating: 5).then(
-      (val) => setState(
-        () {
-          activities = val;
-        },
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: ReorientAppBar(),
-      body: Container(
-        child: Center(
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(16.0, 32.0, 16.0, 16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: activities
-                .map(
-                  (e) => Text(
-                    "${e.activity}: ${e.rating}",
-                  ),
-                )
-                .toList(),
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: Row(
+                  children: [
+                    Text(
+                      'Step 1'.toUpperCase(),
+                      style: ReorientTextStyles.buttonText,
+                    ),
+                    Text(
+                      '/3'.toUpperCase(),
+                      style: ReorientTextStyles.buttonText.copyWith(
+                        fontWeight: FontWeight.w500,
+                        color: ReorientColors.darkGrey,
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
         ),
       ),

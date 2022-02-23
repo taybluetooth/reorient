@@ -17,9 +17,7 @@ class LoginPage extends StatelessWidget {
       if (user != null) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => MainPage(
-              user: user,
-            ),
+            builder: (context) => const MainPage(),
           ),
         );
       }
@@ -35,7 +33,7 @@ class LoginPage extends StatelessWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-      backgroundColor: ReorientColors.white,
+      backgroundColor: ReorientColors.yellow,
       body: FutureBuilder(
           future: _initializeFirebase(),
           builder: (context, snapshot) {
@@ -45,11 +43,11 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
+                  children: [
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.only(left: 16.0),
+                        padding: const EdgeInsets.only(left: 16.0),
                         child: SizedBox(
                           width: 75,
                           child: Text(
@@ -63,7 +61,7 @@ class LoginPage extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                        padding: const EdgeInsets.only(left: 16.0, top: 8.0),
                         child: SizedBox(
                           width: double.infinity,
                           child: Text(

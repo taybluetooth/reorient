@@ -16,6 +16,7 @@ class _OnboardPageState extends State<OnboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ReorientColors.white,
       body: Center(
         child: Container(
           padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
@@ -24,11 +25,11 @@ class _OnboardPageState extends State<OnboardPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Image(
-                width: 120,
-                height: 137,
-                image: AssetImage("assets/runner.png"),
+                width: 240,
+                height: 180,
+                image: AssetImage("assets/logo.PNG"),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 8.0),
                 child: SizedBox(
                   width: 220,
@@ -39,7 +40,7 @@ class _OnboardPageState extends State<OnboardPage> {
                   ),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 220,
                 child: Text(
                   "Discover new hobbies. Properly",
@@ -50,7 +51,7 @@ class _OnboardPageState extends State<OnboardPage> {
               Padding(
                 padding: const EdgeInsets.only(top: 150.0),
                 child: GradientButton(
-                  child: const Text(
+                  child: Text(
                     "Login",
                     style: ReorientTextStyles.buttonText,
                   ),

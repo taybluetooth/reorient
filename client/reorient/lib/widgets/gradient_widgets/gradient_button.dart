@@ -23,7 +23,6 @@ class GradientButton extends StatelessWidget {
       height: 50.0,
       decoration: BoxDecoration(
         gradient: gradient,
-        borderRadius: BorderRadius.circular(4.0),
       ),
       child: Material(
         color: Colors.transparent,

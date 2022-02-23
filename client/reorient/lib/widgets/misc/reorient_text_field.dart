@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:reorient/themes/colors.dart';
 
 class ReorientTextField extends StatelessWidget {
@@ -22,7 +23,7 @@ class ReorientTextField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       obscureText: obscureText,
-      style: const TextStyle(fontFamily: 'Roboto', fontSize: 20.0),
+      style: GoogleFonts.montserrat(fontSize: 20),
       validator: validator,
       enableSuggestions: false,
       autocorrect: false,
@@ -34,6 +35,11 @@ class ReorientTextField extends StatelessWidget {
         focusColor: Colors.transparent,
         hoverColor: Colors.transparent,
         focusedBorder: InputBorder.none,
+        enabledBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: ReorientColors.yellow,
+          ),
+        ),
         contentPadding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         hintText: hint,
         hintStyle: const TextStyle(color: ReorientColors.black),

@@ -12,21 +12,17 @@ import 'package:reorient/widgets/appbar/reorient_appbar.dart';
 import 'package:reorient/widgets/gradient_widgets/gradient_button.dart';
 
 class MainPage extends StatefulWidget {
-  final User user;
-
-  const MainPage({Key? key, required this.user}) : super(key: key);
+  const MainPage({Key? key}) : super(key: key);
 
   @override
   State<MainPage> createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
-  late User _currentUser;
-  late List<Activity> activities;
+  User? user = FirebaseAuth.instance.currentUser;
 
   @override
   void initState() {
-    _currentUser = widget.user;
     super.initState();
   }
 
@@ -34,68 +30,75 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: ReorientAppBar(),
-      backgroundColor: ReorientColors.grey,
+      backgroundColor: ReorientColors.white,
       body: Container(
-        padding: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            StreamBuilder(
-              stream:
-                  FirebaseFirestore.instance.collection("users").snapshots(),
-              builder: (BuildContext context,
-                  AsyncSnapshot<QuerySnapshot> snapshot) {
-                if (!snapshot.hasData) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Hello",
-                      style: ReorientTextStyles.headerText,
-                    ),
-                    Text(
-                      snapshot.data!.docs[0]['displayName'] + "👋",
-                      style: ReorientTextStyles.headerText,
-                    ),
-                    const Text("Let's pick you some activities.",
-                        style: ReorientTextStyles.subHeaderText)
-                  ],
-                );
-              },
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            Center(
-              child: SvgPicture.asset("assets/robot.svg"),
-            ),
-            const SizedBox(
-              height: 80,
-            ),
-            Center(
-              child: GradientButton(
-                child: const Text(
-                  "Get Started",
-                  style: ReorientTextStyles.buttonText,
-                ),
-                gradient: ReorientGradients.mainGradient,
-                onPressed: () => {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ActivityChoicePage(),
-                    ),
-                  )
-                },
-                width: 120.0,
+        padding: const EdgeInsets.fromLTRB(16.0, 32.0, 16.0, 16.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Image(
+                width: 180,
+                height: 120,
+                image: AssetImage("assets/logo.PNG"),
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 40,
+              ),
+              SvgPicture.asset(
+                "assets/main-page-icon.svg",
+                width: 150,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              StreamBuilder(
+                stream:
+                    FirebaseFirestore.instance.collection("users").snapshots(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                  if (!snapshot.hasData) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        snapshot.data!.docs[0]['displayName'] +
+                            ", let's pick you some activities.",
+                        style: ReorientTextStyles.subHeaderText,
+                      ),
+                    ],
+                  );
+                },
+              ),
+              const SizedBox(
+                height: 100,
+              ),
+              Center(
+                child: GradientButton(
+                  child: Text(
+                    "Get Started",
+                    style: ReorientTextStyles.buttonText,
+                  ),
+                  gradient: ReorientGradients.mainGradient,
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ActivityChoicePage(),
+                      ),
+                    )
+                  },
+                  width: 200.0,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

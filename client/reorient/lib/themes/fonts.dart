@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:reorient/themes/colors.dart';
 
 abstract class ReorientTextStyles {
-  static const TextStyle headerText = TextStyle(
+  static TextStyle headerText = GoogleFonts.montserrat(
     fontSize: 24,
-    fontFamily: 'Roboto',
     fontWeight: FontWeight.bold,
     color: ReorientColors.black,
   );
-  static const TextStyle subHeaderText = TextStyle(
+  static TextStyle subHeaderText = GoogleFonts.montserrat(
     fontSize: 16,
-    fontFamily: 'Roboto',
     fontWeight: FontWeight.normal,
     color: ReorientColors.darkGrey,
   );
-  static const TextStyle buttonText = TextStyle(
-    fontSize: 14,
-    fontFamily: 'Roboto',
-    fontWeight: FontWeight.bold,
-    color: ReorientColors.white,
-  );
+  static TextStyle buttonText = GoogleFonts.montserrat(
+      color: ReorientColors.black, fontSize: 14, fontWeight: FontWeight.bold);
 }

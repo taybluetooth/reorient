@@ -33,7 +33,6 @@ class LoginFormState extends State<LoginForm> {
       child: Column(
         children: <Widget>[
           Container(
-            color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -78,7 +77,7 @@ class LoginFormState extends State<LoginForm> {
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: GradientIconButton(
-                gradient: ReorientGradients.mainGradient,
+                gradient: ReorientGradients.blackGradient,
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     User? user = await FireAuth.signInUsingEmailPassword(
@@ -89,7 +88,7 @@ class LoginFormState extends State<LoginForm> {
                     if (user != null) {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                            builder: (context) => MainPage(user: user)),
+                            builder: (context) => const MainPage()),
                       );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

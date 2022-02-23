@@ -7,4 +7,5 @@ abstract class ReorientColors {
   static const Color darkGrey = Color(0x63000000);
   static const Color charcoal = Color(0XFF767676);
   static const Color red = Color(0xFFFF0000);
+  static const Color yellow = Color(0xFFFFE401);
 }
