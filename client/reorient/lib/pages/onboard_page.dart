@@ -30,9 +30,9 @@ class _OnboardPageState extends State<OnboardPage> {
                 image: AssetImage("assets/logo.PNG"),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 8.0),
+                padding: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 8.0),
                 child: SizedBox(
-                  width: 220,
+                  width: 250,
                   child: Text(
                     "Chosen just for you.",
                     style: ReorientTextStyles.headerText,
@@ -43,7 +43,7 @@ class _OnboardPageState extends State<OnboardPage> {
               SizedBox(
                 width: 220,
                 child: Text(
-                  "Discover new hobbies. Properly",
+                  "Discover new hobbies. Properly.",
                   style: ReorientTextStyles.subHeaderText,
                   textAlign: TextAlign.center,
                 ),

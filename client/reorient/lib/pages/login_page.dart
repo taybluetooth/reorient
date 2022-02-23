@@ -49,11 +49,11 @@ class LoginPage extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 16.0),
                         child: SizedBox(
-                          width: 75,
+                          width: 85,
                           child: Text(
                             "Sign in",
                             style: ReorientTextStyles.headerText,
-                            textAlign: TextAlign.center,
+                            textAlign: TextAlign.left,
                           ),
                         ),
                       ),
