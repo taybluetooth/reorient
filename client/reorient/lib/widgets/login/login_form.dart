@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:reorient/auth/fire_auth.dart';
 import 'package:reorient/helpers/email_validate.dart';
 import 'package:reorient/pages/main_page.dart';
@@ -86,10 +85,7 @@ class LoginFormState extends State<LoginForm> {
                       context: context,
                     );
                     if (user != null) {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                            builder: (context) => const MainPage()),
-                      );
+                      Get.to(() => const MainPage());
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text('Incorrect email or password'),

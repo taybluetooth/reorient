@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:reorient/pages/account_page.dart';
 import 'package:reorient/pages/main_page.dart';
 import 'package:reorient/themes/colors.dart';
@@ -29,12 +29,9 @@ class _ReorientAppBarState extends State<ReorientAppBar> {
         children: [
           IconButton(
             onPressed: () => {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const MainPage(),
-                ),
-              )
+              Get.to(
+                () => const MainPage(),
+              ),
             },
             icon: const Icon(
               Icons.home,
@@ -49,14 +46,9 @@ class _ReorientAppBarState extends State<ReorientAppBar> {
             ),
           ),
           IconButton(
-            onPressed: () => {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const AccountPage(),
-                ),
-              )
-            },
+            onPressed: () => Get.to(
+              () => const AccountPage(),
+            ),
             icon: const Icon(
               Icons.account_circle_rounded,
               color: ReorientColors.yellow,

@@ -3,6 +3,7 @@ import 'package:reorient/controllers/activity_controller.dart';
 import 'package:reorient/models/Activity.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
+import 'package:reorient/widgets/activity_cards/activity_card.dart';
 import 'package:reorient/widgets/appbar/reorient_appbar.dart';
 
 class ActivityChoicePage extends StatefulWidget {
@@ -41,7 +42,8 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
                     ),
                   ],
                 ),
-              )
+              ),
+              ActivityCard(),
             ],
           ),
         ),
