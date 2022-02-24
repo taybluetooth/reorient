@@ -3,35 +3,45 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
 
-class ActivityCard extends StatelessWidget {
+class ActivityCard extends StatefulWidget {
   final String name;
+  Color color;
 
-  const ActivityCard({
+  ActivityCard({
     Key? key,
     required this.name,
+    this.color = ReorientColors.yellow,
   }) : super(key: key);
+
+  @override
+  State<ActivityCard> createState() => _ActivityCardState();
+}
+
+class _ActivityCardState extends State<ActivityCard>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 125,
       decoration: BoxDecoration(
-        color: ReorientColors.yellow,
-        borderRadius: BorderRadius.circular(8.0),
-      ),
+          color: widget.color,
+          borderRadius: BorderRadius.circular(8.0),
+          border: Border.all(color: ReorientColors.black, width: 2)),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              'assets/$name.svg',
+              'assets/${widget.name}.svg',
               width: 100,
             ),
             const SizedBox(
               height: 16.0,
             ),
             Text(
-              (name).split("_").join(" "),
+              (widget.name).split("_").join(" "),
               style: ReorientTextStyles.buttonText,
             ),
           ],

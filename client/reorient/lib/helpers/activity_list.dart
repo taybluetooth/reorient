@@ -1,4 +1,4 @@
-final List<String> activitiesList = [
+const List<String> activitiesList = [
   "american_football",
   "ballet",
   "baseball",
