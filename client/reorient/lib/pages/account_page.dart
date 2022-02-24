@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:reorient/pages/onboard_page.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
-import 'package:reorient/themes/gradients.dart';
 import 'package:reorient/widgets/appbar/reorient_appbar.dart';
 import 'package:reorient/widgets/misc/reorient_button.dart';
 

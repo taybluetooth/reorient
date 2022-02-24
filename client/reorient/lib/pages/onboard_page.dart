@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reorient/pages/login_page.dart';
-import 'package:reorient/themes/Gradients.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
 import 'package:reorient/widgets/misc/reorient_button.dart';

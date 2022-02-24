@@ -5,7 +5,6 @@ import 'package:reorient/models/activity_card_helper.dart';
 import 'package:reorient/pages/account_page.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
-import 'package:reorient/themes/gradients.dart';
 import 'package:reorient/widgets/activity_cards/activity_card.dart';
 import 'package:reorient/widgets/appbar/reorient_appbar.dart';
 import 'package:reorient/widgets/misc/reorient_icon_button.dart';
