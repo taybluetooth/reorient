@@ -71,7 +71,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    LoginForm()
+                    const LoginForm()
                   ],
                 ),
               );

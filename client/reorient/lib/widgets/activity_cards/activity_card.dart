@@ -4,23 +4,38 @@ import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
 
 class ActivityCard extends StatelessWidget {
-  const ActivityCard({Key? key}) : super(key: key);
+  final String name;
+
+  const ActivityCard({
+    Key? key,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ReorientColors.black,
+      height: 125,
       decoration: BoxDecoration(
+        color: ReorientColors.yellow,
         borderRadius: BorderRadius.circular(8.0),
       ),
-      child: Column(
-        children: [
-          SvgPicture.asset('assets/golf.svg'),
-          Text(
-            'Golf',
-            style: ReorientTextStyles.buttonText,
-          ),
-        ],
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              'assets/$name.svg',
+              width: 100,
+            ),
+            const SizedBox(
+              height: 16.0,
+            ),
+            Text(
+              (name).split("_").join(" "),
+              style: ReorientTextStyles.buttonText,
+            ),
+          ],
+        ),
       ),
     );
   }

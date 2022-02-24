@@ -47,7 +47,7 @@ class _MainPageState extends State<MainPage> {
                 height: 40,
               ),
               SvgPicture.asset(
-                "assets/main-page-icon.svg",
+                "assets/cycling.svg",
                 width: 150,
               ),
               const SizedBox(
