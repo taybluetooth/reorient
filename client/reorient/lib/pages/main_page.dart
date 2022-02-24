@@ -2,14 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:reorient/controllers/activity_controller.dart';
-import 'package:reorient/models/Activity.dart';
 import 'package:reorient/pages/activity_choice_page.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
 import 'package:reorient/themes/gradients.dart';
 import 'package:reorient/widgets/appbar/reorient_appbar.dart';
-import 'package:reorient/widgets/gradient_widgets/gradient_button.dart';
+import 'package:reorient/widgets/misc/reorient_button.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -29,7 +27,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: ReorientAppBar(),
+      bottomNavigationBar: const ReorientAppBar(),
       backgroundColor: ReorientColors.white,
       body: Container(
         padding: const EdgeInsets.fromLTRB(16.0, 32.0, 16.0, 16.0),
@@ -80,12 +78,12 @@ class _MainPageState extends State<MainPage> {
                 height: 100,
               ),
               Center(
-                child: GradientButton(
+                child: ReorientButton(
                   child: Text(
                     "Get Started",
                     style: ReorientTextStyles.buttonText,
                   ),
-                  gradient: ReorientGradients.mainGradient,
+                  color: ReorientColors.yellow,
                   onPressed: () => {
                     Navigator.push(
                       context,

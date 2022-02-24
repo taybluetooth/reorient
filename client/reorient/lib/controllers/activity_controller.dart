@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:reorient/models/Activity.dart';
+import 'package:reorient/models/activity.dart';
 
 Future<List<Activity>> fetchRecommendation(
     {activity = "Football", rating = 0}) async {
   final response = await http.get(Uri.parse(
-      'http://10.0.2.2:5000/api/v1/recommend?activity=${activity}&rating=${rating}'));
+      'http://10.0.2.2:5000/api/v1/recommend?activity=$activity&rating=$rating'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:reorient/themes/colors.dart';
 
-class GradientIconButton extends StatelessWidget {
-  final Gradient gradient;
+class ReorientIconButton extends StatelessWidget {
+  final Color color;
   final double width;
   final double height;
   final Icon icon;
   final void Function()? onPressed;
 
-  const GradientIconButton({
+  const ReorientIconButton({
     Key? key,
-    required this.gradient,
+    required this.color,
     this.width = 50.0,
     this.height = 50.0,
     required this.onPressed,
@@ -22,16 +23,14 @@ class GradientIconButton extends StatelessWidget {
       width: width,
       height: 50.0,
       decoration: BoxDecoration(
-        gradient: gradient,
+        color: color,
         borderRadius: BorderRadius.circular(100.0),
       ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: onPressed,
-          child: Center(
-            child: IconButton(onPressed: onPressed, icon: icon),
-          ),
+      child: Center(
+        child: IconButton(
+          onPressed: onPressed,
+          icon: icon,
+          disabledColor: ReorientColors.darkGrey,
         ),
       ),
     );

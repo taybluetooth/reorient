@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:reorient/pages/login_page.dart';
 import 'package:reorient/themes/Gradients.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
-import 'package:reorient/widgets/gradient_widgets/gradient_button.dart';
+import 'package:reorient/widgets/misc/reorient_button.dart';
 
 class OnboardPage extends StatefulWidget {
   const OnboardPage({Key? key}) : super(key: key);
@@ -50,20 +51,17 @@ class _OnboardPageState extends State<OnboardPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 150.0),
-                child: GradientButton(
+                child: ReorientButton(
                   child: Text(
                     "Login",
                     style: ReorientTextStyles.buttonText,
                   ),
                   width: 200,
-                  gradient: ReorientGradients.mainGradient,
+                  color: ReorientColors.yellow,
                   onPressed: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ),
-                    )
+                    Get.to(
+                      () => const LoginPage(),
+                    ),
                   },
                 ),
               )

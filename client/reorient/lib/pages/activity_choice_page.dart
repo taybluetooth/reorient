@@ -1,14 +1,14 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:reorient/helpers/activity_list.dart';
-import 'package:reorient/models/ActivityCard.dart';
+import 'package:reorient/models/activity_card_helper.dart';
+import 'package:reorient/pages/account_page.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
 import 'package:reorient/themes/gradients.dart';
 import 'package:reorient/widgets/activity_cards/activity_card.dart';
 import 'package:reorient/widgets/appbar/reorient_appbar.dart';
-import 'package:reorient/widgets/gradient_widgets/gradient_icon_button.dart';
+import 'package:reorient/widgets/misc/reorient_icon_button.dart';
 
 class ActivityChoicePage extends StatefulWidget {
   const ActivityChoicePage({Key? key}) : super(key: key);
@@ -22,12 +22,12 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
   List<ActivityCardHelper> activityCardList = activitiesList
       .map((e) => ActivityCardHelper(e, ReorientColors.yellow))
       .toList();
-  Color color = ReorientColors.yellow;
+  bool selected = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: ReorientAppBar(),
+      bottomNavigationBar: const ReorientAppBar(),
       backgroundColor: ReorientColors.white,
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(top: 10.0),
@@ -62,11 +62,12 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
                   ],
                 ),
               ),
-              const SizedBox(height: 32.0),
+              const SizedBox(height: 24.0),
               Text(
                 'Okay, Please choose up to 5 activities.',
                 style: ReorientTextStyles.subHeaderText,
               ),
+              const SizedBox(height: 16.0),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
@@ -95,16 +96,15 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: GradientIconButton(
-                    gradient: ReorientGradients.blackGradient,
-                    onPressed: () => {},
-                    icon: const Icon(
-                      Icons.arrow_forward,
-                      color: ReorientColors.yellow,
-                    ),
-                  ),
-                ),
+                    padding: const EdgeInsets.all(4.0),
+                    child: ReorientIconButton(
+                        color: selectedActivities.isNotEmpty
+                            ? ReorientColors.yellow
+                            : ReorientColors.lightGrey,
+                        onPressed: (selectedActivities.isNotEmpty
+                            ? () => Get.to(() => const AccountPage())
+                            : null),
+                        icon: const Icon(Icons.arrow_forward))),
               )
             ],
           ),
@@ -119,18 +119,25 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
         selectedActivities.remove(e.name);
         e.color = ReorientColors.yellow;
         setState(() {});
-        print(selectedActivities);
       } else {
         selectedActivities.add(e.name);
         e.color = ReorientColors.lightGreen;
         setState(() {});
-        print(selectedActivities);
       }
     } else {
-      e.color = ReorientColors.yellow;
-      setState(() {});
-      selectedActivities.remove(e.name);
-      print('Maximum amount selected');
+      if (e.color == ReorientColors.lightGreen) {
+        e.color = ReorientColors.yellow;
+        setState(() {});
+        selectedActivities.remove(e.name);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('You can only choose 5 activities.'),
+            duration: Duration(seconds: 1),
+            backgroundColor: ReorientColors.red,
+          ),
+        );
+      }
     }
   }
 }

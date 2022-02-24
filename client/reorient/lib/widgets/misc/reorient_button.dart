@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class GradientButton extends StatelessWidget {
+class ReorientButton extends StatelessWidget {
   final Widget child;
-  final Gradient gradient;
+  final Color color;
   final double width;
   final double height;
   final void Function()? onPressed;
 
-  const GradientButton({
+  const ReorientButton({
     Key? key,
     required this.child,
-    required this.gradient,
+    required this.color,
     this.width = double.infinity,
     this.height = 50.0,
     required this.onPressed,
@@ -20,18 +20,15 @@ class GradientButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: 50.0,
-      decoration: BoxDecoration(
-        gradient: gradient,
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: onPressed,
-          child: Center(
-            child: child,
-          ),
+      height: height,
+      child: TextButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(color),
         ),
+        child: Center(
+          child: child,
+        ),
+        onPressed: onPressed,
       ),
     );
   }

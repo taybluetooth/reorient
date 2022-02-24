@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:reorient/pages/onboard_page.dart';
+import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
 import 'package:reorient/themes/gradients.dart';
 import 'package:reorient/widgets/appbar/reorient_appbar.dart';
-import 'package:reorient/widgets/gradient_widgets/gradient_button.dart';
+import 'package:reorient/widgets/misc/reorient_button.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -16,16 +17,15 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: ReorientAppBar(),
+      bottomNavigationBar: const ReorientAppBar(),
       body: Center(
-        child: Container(
-            child: GradientButton(
+        child: ReorientButton(
           width: 150.0,
           child: Text(
             'Sign out',
             style: ReorientTextStyles.buttonText,
           ),
-          gradient: ReorientGradients.mainGradient,
+          color: ReorientColors.yellow,
           onPressed: () => {
             _signOut(),
             Navigator.pushReplacement(
@@ -35,7 +35,7 @@ class AccountPage extends StatelessWidget {
               ),
             ),
           },
-        )),
+        ),
       ),
     );
   }

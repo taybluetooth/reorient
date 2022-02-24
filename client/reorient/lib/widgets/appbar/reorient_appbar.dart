@@ -5,7 +5,7 @@ import 'package:reorient/pages/main_page.dart';
 import 'package:reorient/themes/colors.dart';
 
 class ReorientAppBar extends StatefulWidget {
-  ReorientAppBar({Key? key}) : super(key: key);
+  const ReorientAppBar({Key? key}) : super(key: key);
 
   @override
   State<ReorientAppBar> createState() => _ReorientAppBarState();

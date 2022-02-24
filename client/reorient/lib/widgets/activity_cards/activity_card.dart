@@ -5,9 +5,9 @@ import 'package:reorient/themes/fonts.dart';
 
 class ActivityCard extends StatefulWidget {
   final String name;
-  Color color;
+  final Color color;
 
-  ActivityCard({
+  const ActivityCard({
     Key? key,
     required this.name,
     this.color = ReorientColors.yellow,
@@ -24,11 +24,13 @@ class _ActivityCardState extends State<ActivityCard>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Container(
       decoration: BoxDecoration(
-          color: widget.color,
-          borderRadius: BorderRadius.circular(8.0),
-          border: Border.all(color: ReorientColors.black, width: 2)),
+        color: widget.color,
+        borderRadius: BorderRadius.circular(8.0),
+        border: Border.all(color: ReorientColors.black, width: 2),
+      ),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
