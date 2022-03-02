@@ -44,6 +44,9 @@ dependencies:
   dartpy: ^0.0.1+4
   ffi: ^1.1.2
   get: ^4.6.1
+  flutter_staggered_animations: ^1.0.0
+  flutter_rating_bar: ^4.0.0
+  flutter_spinkit: ^5.1.0
 
 dev_dependencies:
   flutter_test:

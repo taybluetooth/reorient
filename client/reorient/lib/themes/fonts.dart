@@ -15,4 +15,6 @@ abstract class ReorientTextStyles {
   );
   static TextStyle buttonText = GoogleFonts.montserrat(
       color: ReorientColors.black, fontSize: 14, fontWeight: FontWeight.bold);
+  static TextStyle h4 = GoogleFonts.montserrat(
+      color: ReorientColors.black, fontSize: 16, fontWeight: FontWeight.bold);
 }

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:reorient/helpers/activity_list.dart';
 import 'package:reorient/models/activity_card_helper.dart';
 import 'package:reorient/pages/account_page.dart';
+import 'package:reorient/pages/main_page.dart';
+import 'package:reorient/pages/rating_page.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
 import 'package:reorient/widgets/activity_cards/activity_card.dart';
@@ -31,7 +33,7 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(top: 10.0),
         child: IconButton(
-          onPressed: () => {Navigator.pop(context)},
+          onPressed: () => {Get.to(() => const MainPage())},
           icon: const Icon(Icons.arrow_back),
         ),
       ),
@@ -101,7 +103,8 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
                             ? ReorientColors.yellow
                             : ReorientColors.lightGrey,
                         onPressed: (selectedActivities.isNotEmpty
-                            ? () => Get.to(() => const AccountPage())
+                            ? () => Get.to(() =>
+                                RatingPage(activities: selectedActivities))
                             : null),
                         icon: const Icon(Icons.arrow_forward))),
               )

@@ -52,7 +52,7 @@ def home():
     if 'activity' in request.args:
         activity = str(request.args['activity'])
         if 'rating' in request.args:
-            rating = int(request.args['rating'])
+            rating = float(request.args['rating'])
         else:
             return "Error: No rating field provided. Please specify an rating."
     else:

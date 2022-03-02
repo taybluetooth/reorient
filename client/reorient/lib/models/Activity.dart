@@ -1,8 +1,8 @@
 class Activity {
   final String activity;
-  final String rating;
+  String rating;
 
-  const Activity({
+  Activity({
     required this.activity,
     required this.rating,
   });
