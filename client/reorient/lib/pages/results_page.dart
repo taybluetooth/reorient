@@ -5,9 +5,11 @@ import 'package:reorient/pages/activity_choice_page.dart';
 import 'package:reorient/pages/rating_page.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/widgets/appbar/reorient_appbar.dart';
+import 'package:reorient/widgets/results/result_card.dart';
 
 class ResultsPage extends StatefulWidget {
-  List<List<Activity>> recommendations;
+  final List<List<Activity>> recommendations;
+  List<Map<dynamic, dynamic>> parsed = [];
 
   ResultsPage({Key? key, required this.recommendations}) : super(key: key);
 
@@ -29,13 +31,29 @@ class _ResultsPageState extends State<ResultsPage> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-      body: Column(
-        children: widget.recommendations
-            .map((e) => Column(
-                  children:
-                      e.map((i) => Text("${i.activity}:${i.rating}")).toList(),
-                ))
-            .toList(),
+      body: Container(
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: widget.recommendations
+                .map(
+                  (e) => Column(
+                    children: e
+                        .map(
+                          (i) => Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: ResultCard(activity: i),
+                          ),
+                        )
+                        .toList()
+                        .sublist(0, 10), // limit to only top 10 activities
+                  ),
+                )
+                .toList(),
+          ),
+        ),
       ),
     );
   }

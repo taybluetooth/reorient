@@ -13,4 +13,9 @@ class Activity {
       rating: json['rating'],
     );
   }
+
+  Map toJson() => {
+        'activity': activity,
+        'rating': rating,
+      };
 }
