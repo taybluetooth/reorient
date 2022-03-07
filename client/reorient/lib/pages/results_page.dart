@@ -32,23 +32,28 @@ class _ResultsPageState extends State<ResultsPage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
       body: Container(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.fromLTRB(16.0, 80.0, 16.0, 16.0),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: widget.recommendations
                 .map(
-                  (e) => Column(
-                    children: e
-                        .map(
-                          (i) => Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: ResultCard(activity: i),
-                          ),
-                        )
-                        .toList()
-                        .sublist(0, 10), // limit to only top 10 activities
+                  (e) => Expanded(
+                    child: ListView(
+                      children: e
+                          .map(
+                            (i) => Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: ResultCard(
+                                activity: i,
+                                index: (e.indexOf(i)) + 1,
+                              ),
+                            ),
+                          )
+                          .toList()
+                          .sublist(0, 10), // limit to only top 10 activities
+                    ),
                   ),
                 )
                 .toList(),

@@ -10,4 +10,5 @@ abstract class ReorientColors {
   static const Color yellow = Color(0xFFFFE401);
   static const Color lightGreen = Color(0xFF90EE90);
   static const Color lightGrey = Color(0xFFD3D3D3);
+  static const Color darkYellow = Color.fromARGB(255, 177, 166, 70);
 }
