@@ -129,13 +129,13 @@ class _RatingPageState extends State<RatingPage> {
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: ReorientIconButton(
-                    color: ReorientColors.yellow,
+                    color: ReorientColors.lightGreen,
                     onPressed: () => Get.to(
                       () => RecommendationPage(
                         activities: ratings,
                       ),
                     ),
-                    icon: const Icon(Icons.arrow_forward),
+                    icon: const Icon(Icons.check),
                   ),
                 ),
               ),

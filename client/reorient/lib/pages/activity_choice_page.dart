@@ -100,13 +100,13 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
                     padding: const EdgeInsets.all(4.0),
                     child: ReorientIconButton(
                         color: selectedActivities.isNotEmpty
-                            ? ReorientColors.yellow
+                            ? ReorientColors.lightGreen
                             : ReorientColors.lightGrey,
                         onPressed: (selectedActivities.isNotEmpty
                             ? () => Get.to(() =>
                                 RatingPage(activities: selectedActivities))
                             : null),
-                        icon: const Icon(Icons.arrow_forward))),
+                        icon: const Icon(Icons.check))),
               )
             ],
           ),
