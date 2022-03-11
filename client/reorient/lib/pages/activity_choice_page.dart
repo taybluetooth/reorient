@@ -33,7 +33,16 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(top: 10.0),
         child: IconButton(
-          onPressed: () => {Get.to(() => const MainPage())},
+          onPressed: () => {
+            Get.to(
+              () => const MainPage(
+                recentLogIn: false,
+              ),
+              transition: Transition
+                  .leftToRight, // choose your page transition accordingly
+              duration: const Duration(milliseconds: 300),
+            )
+          },
           icon: const Icon(Icons.arrow_back),
         ),
       ),
@@ -103,8 +112,13 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
                             ? ReorientColors.lightGreen
                             : ReorientColors.lightGrey,
                         onPressed: (selectedActivities.isNotEmpty
-                            ? () => Get.to(() =>
-                                RatingPage(activities: selectedActivities))
+                            ? () => Get.to(
+                                  () => RatingPage(
+                                      activities: selectedActivities),
+                                  transition: Transition
+                                      .leftToRight, // choose your page transition accordingly
+                                  duration: const Duration(milliseconds: 300),
+                                )
                             : null),
                         icon: const Icon(Icons.check))),
               )

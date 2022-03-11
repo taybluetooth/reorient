@@ -134,6 +134,9 @@ class _RatingPageState extends State<RatingPage> {
                       () => RecommendationPage(
                         activities: ratings,
                       ),
+                      transition: Transition
+                          .leftToRight, // choose your page transition accordingly
+                      duration: const Duration(milliseconds: 300),
                     ),
                     icon: const Icon(Icons.check),
                   ),

@@ -60,6 +60,9 @@ class _OnboardPageState extends State<OnboardPage> {
                   onPressed: () => {
                     Get.to(
                       () => const LoginPage(),
+                      transition: Transition
+                          .leftToRight, // choose your page transition accordingly
+                      duration: const Duration(milliseconds: 300),
                     ),
                   },
                 ),

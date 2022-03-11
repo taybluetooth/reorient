@@ -77,7 +77,14 @@ class LoginFormState extends State<LoginForm> {
                       context: context,
                     );
                     if (user != null) {
-                      Get.to(() => const MainPage());
+                      Get.to(
+                        () => const MainPage(
+                          recentLogIn: true,
+                        ),
+                        transition: Transition
+                            .leftToRight, // choose your page transition accordingly
+                        duration: const Duration(milliseconds: 300),
+                      );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text('Incorrect email or password'),

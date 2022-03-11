@@ -17,7 +17,9 @@ class LoginPage extends StatelessWidget {
       if (user != null) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => const MainPage(),
+            builder: (context) => const MainPage(
+              recentLogIn: true,
+            ),
           ),
         );
       }

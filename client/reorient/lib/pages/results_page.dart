@@ -35,7 +35,12 @@ class _ResultsPageState extends State<ResultsPage> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(top: 10.0),
         child: IconButton(
-          onPressed: () => Get.to(() => const ActivityChoicePage()),
+          onPressed: () => Get.to(
+            () => const ActivityChoicePage(),
+            transition: Transition
+                .leftToRight, // choose your page transition accordingly
+            duration: const Duration(milliseconds: 300),
+          ),
           icon: const Icon(Icons.arrow_back),
         ),
       ),
@@ -79,7 +84,14 @@ class _ResultsPageState extends State<ResultsPage> {
                 padding: const EdgeInsets.all(4.0),
                 child: ReorientIconButton(
                   color: ReorientColors.lightGreen,
-                  onPressed: () => Get.to(() => const MainPage()),
+                  onPressed: () => Get.to(
+                    () => const MainPage(
+                      recentLogIn: false,
+                    ),
+                    transition: Transition
+                        .leftToRight, // choose your page transition accordingly
+                    duration: const Duration(milliseconds: 300),
+                  ),
                   icon: const Icon(Icons.check),
                 ),
               ),

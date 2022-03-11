@@ -30,7 +30,10 @@ class _ReorientAppBarState extends State<ReorientAppBar> {
           IconButton(
             onPressed: () => {
               Get.to(
-                () => const MainPage(),
+                () => const MainPage(recentLogIn: false),
+                transition: Transition
+                    .leftToRight, // choose your page transition accordingly
+                duration: const Duration(milliseconds: 300),
               ),
             },
             icon: const Icon(
@@ -39,18 +42,14 @@ class _ReorientAppBarState extends State<ReorientAppBar> {
             ),
           ),
           IconButton(
-            onPressed: () => {},
-            icon: const Icon(
-              Icons.search,
-              color: ReorientColors.yellow,
-            ),
-          ),
-          IconButton(
             onPressed: () => Get.to(
               () => const AccountPage(),
+              transition: Transition
+                  .leftToRight, // choose your page transition accordingly
+              duration: const Duration(milliseconds: 300),
             ),
             icon: const Icon(
-              Icons.account_circle_rounded,
+              Icons.settings,
               color: ReorientColors.yellow,
             ),
           ),

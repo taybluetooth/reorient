@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:reorient/pages/activity_choice_page.dart';
 import 'package:reorient/themes/colors.dart';
 import 'package:reorient/themes/fonts.dart';
@@ -9,7 +12,9 @@ import 'package:reorient/widgets/appbar/reorient_appbar.dart';
 import 'package:reorient/widgets/misc/reorient_button.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+  final bool recentLogIn;
+
+  const MainPage({Key? key, required this.recentLogIn}) : super(key: key);
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -21,6 +26,40 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
+    // simply use this
+    Timer.run(() {
+      widget.recentLogIn
+          ? showDialog(
+              context: context,
+              builder: (_) => AlertDialog(
+                title: Text(
+                  "Welcome to Reorient!",
+                  style: ReorientTextStyles.h4,
+                ),
+                content: Text(
+                  "Click on the 'Get Started' button to begin choosing activities for a recommendation!",
+                  style: ReorientTextStyles.bodyText,
+                ),
+                actions: <Widget>[
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(ReorientColors.yellow),
+                        foregroundColor:
+                            MaterialStateProperty.all(ReorientColors.black)),
+                    child: Text(
+                      "OK",
+                      style: ReorientTextStyles.buttonText,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              ),
+            )
+          : null;
+    });
   }
 
   @override
@@ -84,11 +123,11 @@ class _MainPageState extends State<MainPage> {
                   ),
                   color: ReorientColors.yellow,
                   onPressed: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ActivityChoicePage(),
-                      ),
+                    Get.to(
+                      () => const ActivityChoicePage(),
+                      transition: Transition
+                          .leftToRight, // choose your page transition accordingly
+                      duration: const Duration(milliseconds: 300),
                     )
                   },
                   width: 200.0,

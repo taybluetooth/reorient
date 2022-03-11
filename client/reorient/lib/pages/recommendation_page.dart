@@ -34,7 +34,12 @@ class _RecommendationPageState extends State<RecommendationPage> {
 
   _RecommendationPageState() {
     Timer _timer = Timer(const Duration(seconds: 1), () {
-      Get.to(() => ResultsPage(recommendations: recommendations));
+      Get.to(
+        () => ResultsPage(recommendations: recommendations),
+        transition:
+            Transition.leftToRight, // choose your page transition accordingly
+        duration: const Duration(milliseconds: 300),
+      );
     });
   }
 
