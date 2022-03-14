@@ -21,7 +21,7 @@ class ActivityChoicePage extends StatefulWidget {
 class _ActivityChoicePageState extends State<ActivityChoicePage> {
   List<String> selectedActivities = [];
   List<ActivityCardHelper> activityCardList = activitiesList
-      .map((e) => ActivityCardHelper(e, ReorientColors.yellow))
+      .map((e) => ActivityCardHelper(e[0], ReorientColors.yellow))
       .toList();
   bool selected = false;
 
