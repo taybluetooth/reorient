@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 class ActivityController {
   static Future<List<Activity>> _fetch({required Activity activity}) async {
     final response = await http.get(Uri.parse(
-        'http://10.0.2.2:5000/api/v1/recommend?activity=${capitalize(activity.activity)}&rating=${activity.rating}'));
+        'https://reorient-api.herokuapp.com/?activity=${capitalize(activity.activity)}&rating=${activity.rating}'));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
