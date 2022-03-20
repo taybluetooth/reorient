@@ -89,28 +89,15 @@ class _MainPageState extends State<MainPage> {
               const SizedBox(
                 height: 20,
               ),
-              StreamBuilder(
-                stream:
-                    FirebaseFirestore.instance.collection("users").snapshots(),
-                builder: (BuildContext context,
-                    AsyncSnapshot<QuerySnapshot> snapshot) {
-                  if (!snapshot.hasData) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                  return Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        snapshot.data!.docs[0]['displayName'] +
-                            ", let's pick you some activities.",
-                        style: ReorientTextStyles.subHeaderText,
-                      ),
-                    ],
-                  );
-                },
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Let's pick you some activities.",
+                    style: ReorientTextStyles.subHeaderText,
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 100,
