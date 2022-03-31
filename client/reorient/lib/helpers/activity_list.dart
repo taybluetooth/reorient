@@ -4,20 +4,12 @@ const List<List<String>> activitiesList = [
     "Ballet is an art form created by the movement of the human body. It is theatrical – performed on a stage to an audience utilizing costumes, scenic design and lighting. It can tell a story or express a thought, concept or emotion. Ballet dance can be magical, exciting, provoking or disturbing."
   ],
   [
-    "baseball",
-    "Baseball is a bat-and-ball sport played on a field by two teams against each other. In baseball, a player on one team throws a small round ball at a player on the other team, who tries to hit it with a bat. Then the player who hits the ball has to run around the field. Players get runs by running around in a full circle around three points on the ground called bases, to back where they started, which is called home plate. They have to do this without getting caught by the players on the other team."
-  ],
-  [
     "basketball",
     "Basketball is a game played between two teams of five players each on a rectangular court, usually indoors. Each team tries to score by tossing the ball through the opponent's goal, an elevated horizontal hoop and net called a basket."
   ],
   [
     "boxing",
     "Boxing is a combat sport that involves fighting with fists. Traditionally, boxing has also been referred to as “pugilism,” which literally means, “fist fight.” Fights take place in an area called a “ring,” and consist of timed rounds. Winners are decided by points or by knocking out an opponent. A referee runs the fight inside the ring while judges outside the ring ultimately decide who wins the match."
-  ],
-  [
-    "cycling",
-    "Cycling can help to protect you from serious diseases such as stroke, heart attack, some cancers, depression, diabetes, obesity and arthritis. Riding a bike is healthy, fun and a low-impact form of exercise for all ages. Cycling is easy to fit into your daily routine by riding to the shops, park, school or work."
   ],
   [
     "dancing",
@@ -36,10 +28,6 @@ const List<List<String>> activitiesList = [
     "Football is a team sport played between two teams of 11 players each. It is widely considered to be the most popular sport in the world. A ball game, it is played on a rectangular grass field, or occasionally an artificial turf, with a goal at each end of the field. The object of the game is to score by manoeuvring the ball into the opposing goal; only the goalkeepers may use their hands or arms to propel the ball in general play. The team that scores the most goals by the end of the match wins. If the score is tied at the end of the game, either a draw is declared or the game goes into extended time, depending on the format of the competition."
   ],
   [
-    "golf",
-    "golf, a cross-country game in which a player strikes a small ball with various clubs from a series of starting points (teeing grounds) into a series of holes on a course. The player who holes his ball in the fewest strokes wins."
-  ],
-  [
     "gymnastics",
     "gymnastics, the performance of systematic exercises—often with the use of rings, bars, and other apparatus—either as a competitive sport or to improve strength, agility, coordination, and physical conditioning."
   ],
@@ -50,10 +38,6 @@ const List<List<String>> activitiesList = [
   [
     "ice_hockey",
     "Ice hockey is a game between two teams who wear skates and compete on an ice rink. Each team usually has six players. The object is to propel the puck past a goal line and into a net guarded by a goaltender. Ice hockey is popular for its speed and frequent physical contact."
-  ],
-  [
-    "karting",
-    "Karting is a road racing variant of motorsport with open-wheel, four-wheeled vehicles known as go-karts or shifter karts. They are usually raced on scaled-down circuits, although some professional kart races are also held on full-size motorsport circuits."
   ],
   [
     "martial_arts",
@@ -84,20 +68,12 @@ const List<List<String>> activitiesList = [
     "Swimming is an individual or team racing sport that requires the use of one's entire body to move through water. The sport takes place in pools or open water (e.g., in a sea or lake). Competitive swimming is one of the most popular Olympic sports,[1] with varied distance events in butterfly, backstroke, breaststroke, freestyle, and individual medley."
   ],
   [
-    "tennis",
-    "Tennis is a game played with two opposing players (singles) or pairs of players (doubles) using tautly strung rackets to hit a ball of specified size, weight, and bounce over a net on a rectangular court."
-  ],
-  [
     "volleyball",
     "Volleyball is a team sport in which two teams of six players are separated by a net. Each team tries to score points by grounding a ball on the other team's court under organized rules."
   ],
   [
     "water_polo",
     "Water polo is a competitive team sport played in water between two teams of seven players each. The game consists of four quarters in which the two teams attempt to score goals by throwing the ball into the opposing team's goal. The team with the most goals at the end of the game wins the match. Each team is made up of six field players and one goalkeeper. Excluding the goalkeeper, players participate in both offensive and defensive roles. Water polo is typically played in an all-deep pool so that players cannot touch the bottom."
-  ],
-  [
-    "weight_lifting",
-    "Weight lifting is a type of strength training that uses weights for resistance. Weight lifting provides a stress to the muscles that causes them to adapt and get stronger, similar to the way aerobic conditioning strengthens your heart."
   ],
   [
     "wrestling",

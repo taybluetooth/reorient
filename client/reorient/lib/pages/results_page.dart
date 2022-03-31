@@ -68,8 +68,7 @@ class _ResultsPageState extends State<ResultsPage> {
                                 ),
                               )
                               .toList()
-                              .sublist(
-                                  0, 10), // limit to only top 10 activities
+                              .sublist(0, 5), // limit to only top 10 activities
                         ),
                       ),
                     ]),

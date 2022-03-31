@@ -70,7 +70,7 @@ class _RatingPageState extends State<RatingPage> {
               ),
               const SizedBox(height: 48.0),
               Text(
-                'How much do you enjoy each activity?',
+                'How much do you enjoy your chosen activity?',
                 style: ReorientTextStyles.subHeaderText,
               ),
               const SizedBox(height: 32.0),

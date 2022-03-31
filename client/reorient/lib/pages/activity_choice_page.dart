@@ -74,7 +74,7 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
               ),
               const SizedBox(height: 24.0),
               Text(
-                'Okay, Please choose up to 5 activities.',
+                'Okay, Please choose an activity.',
                 style: ReorientTextStyles.subHeaderText,
               ),
               const SizedBox(height: 16.0),
@@ -130,7 +130,7 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
   }
 
   void _onTap(e) {
-    if (selectedActivities.length < 5) {
+    if (selectedActivities.isEmpty) {
       if (selectedActivities.contains(e.name)) {
         selectedActivities.remove(e.name);
         e.color = ReorientColors.yellow;
@@ -148,7 +148,7 @@ class _ActivityChoicePageState extends State<ActivityChoicePage> {
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('You can only choose 5 activities.'),
+            content: Text('You can only choose 1 activity.'),
             duration: Duration(seconds: 1),
             backgroundColor: ReorientColors.red,
           ),
